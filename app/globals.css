@@ -1,0 +1,34 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { color-scheme: light; }
+html { scroll-behavior: auto; }
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-stopped { overflow: hidden; }
+
+body { @apply bg-white text-ink font-sans antialiased; line-height: 1.65; text-rendering: optimizeLegibility; }
+h1, h2, h3, h4 { @apply font-serif text-blue-950; font-optical-sizing: auto; letter-spacing: -0.015em; }
+::selection { background: #BFD6FF; color: #04122E; }
+
+@layer components {
+  .container-x { @apply mx-auto w-full max-w-[1200px] px-5 sm:px-8; }
+  .eyebrow { @apply inline-flex items-center gap-2 text-[12px] font-semibold uppercase tracking-[0.16em] text-blue-600; }
+  .eyebrow::before { content: ""; @apply h-px w-8 bg-blue-500; }
+  .btn { @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-[15px] font-semibold transition-all duration-300; }
+  .btn-primary { @apply bg-blue-600 text-white shadow-glow hover:bg-blue-700 hover:-translate-y-0.5; }
+  .btn-ghost { @apply border border-blue-200 bg-white/70 text-blue-800 backdrop-blur hover:border-blue-400 hover:bg-white; }
+  .btn-light { @apply bg-white text-blue-800 hover:bg-blue-50 hover:-translate-y-0.5; }
+  .section { @apply py-20 sm:py-28; }
+  .h-display { @apply text-[2.6rem] leading-[1.06] sm:text-6xl lg:text-[4.1rem] font-medium; }
+  .h-section { @apply text-3xl sm:text-4xl lg:text-[2.8rem] leading-[1.12] font-medium; }
+  .lead { @apply text-lg text-slate-600 leading-relaxed; }
+  .card { @apply rounded-2xl border border-blue-100 bg-white shadow-card; }
+  .grid-bg {
+    background-image: linear-gradient(rgba(20,86,214,.06) 1px, transparent 1px), linear-gradient(90deg, rgba(20,86,214,.06) 1px, transparent 1px);
+    background-size: 56px 56px;
+    mask-image: radial-gradient(ellipse at 50% 40%, #000 30%, transparent 75%);
+  }
+}
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; } }
